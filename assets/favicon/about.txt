@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Mystery Quest
+- Font Author: Copyright (c) 2012 by Font Diner, Inc DBA Sideshow (diner@fontdiner.com) with Reseved Font Name "Mystery Quest"
+- Font Source: http://fonts.gstatic.com/s/mysteryquest/v20/-nF6OG414u0E6k0wynSGlujRHwElD_9Qz9E.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
