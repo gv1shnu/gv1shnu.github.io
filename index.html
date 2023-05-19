@@ -21,17 +21,16 @@
 					<header id="header">
 						<div class="content">
 							<div class="inner">
-								<h1>Gandarapu Vishnu</h1>
-								<p>Information Tech Student <br />
+								<h1 class="tr" data-key="title"></h1>
+								<p class="tr" data-key="designation"><br />
 								</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#projects">Projects</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#skills">Skills</a></li>
-								<li><a href="#edu">Education</a></li>
+								<li><a href="#work" class="tr" data-key="work"></a></li>
+								<li><a href="#skills" class="tr" data-key="skills"></a></li>
+								<li><a href="#edu" class="tr" data-key="edu"></a></li>
 							</ul>
 						</nav>
 					</header>
@@ -41,8 +40,8 @@
 						<a href="https://github.com/gv1shnu"
 						target="_blank">
 							<img src="./images/github.png"
-							width="110"
-							height="110"
+							width="90"
+							height="90"
 							>
 						</a>	
 						
@@ -50,8 +49,8 @@
 						target="_blank">
 						
 							<img src="./images/linkedin.png"
-							width="100"
-							height="100"
+							width="90"
+							height="90"
 							>
 						</a>	
 
@@ -59,43 +58,33 @@
 						target="_blank">
 						
 							<img src="./images/instagram.png"
-							width="100"
-							height="100"
+							width="90"
+							height="90"
 							>
 						</a>
 						
 					</div>
 
 				<!-- Main -->
-					<div id="main">
-
-						<!-- Projects -->
-							<article id="projects">
-								<h2 class="major">Projects</h2>
-								<span class="image main"><img src="images/projects_header.png" alt="Header"></span>
-								<p>
-									<h4>Under Construction</h4>
-								</p>
-							
-							</article>
+					<div id="main">						
 
 						<!-- Work -->
 							<article id="work">
-								<h2 class="major">Work Experience</h2>
+								<h2 class="major" class="tr" data-key="workexp"></h2>
 								<span class="image main"><img src="./images/wcp.png" alt="Wattlecorp Logo"/></span>
 								<p>
-									<h1>Wattlecorp Cybersecurity Labs</h1>
-									<h4>Pentester Intern</h4>
-									<h4>June 2022 - July 2022</h4>		
+									<h1 class="tr" data-key="company1"></h1>
+									<h4 class="tr" data-key="role1"></h4>
+									<h4 class="tr" data-key="dates1"></h4>		
 								</p>
 							</article>
 
 						<!-- Skills -->
 							<article id="skills">
-								<h2 class="major">Skills</h2>
+								<h2 class="major" class="tr" data-key="skills"></h2>
 								<span class="image main"><img src="./images/cs_skills.jpg" alt="Skills"/></span>
 								<p>
-									<h2>Programming Languages</h2>
+									<h2 class="tr" data-key="pl"></h2>
 										<img src="./images/html.png" width="50px" height="50px">										
 										<img src="./images/sql.png" width="50px" height="50px">
 										<img src="./images/c++.png" width="50px" height="50px">
@@ -104,7 +93,7 @@
 										<img src="./images/css.png" width="50px" height="50px">
 										<br>
 										<br>										
-									<h2>Frameworks</h2>
+									<h2 class="tr" data-key="fr"></h2>
 										<img src="./images/opencv.png" width="50px" height="50px">
 										<img src="./images/keras.png" width="50px" height="50px">
 										<img src="./images/tensorflow.png" width="50px" height="50px">
@@ -114,7 +103,7 @@
 										<img src="./images/selenium.png" width="50px" height="50px">
 										<br>
 										<br>
-									<h2>Software</h2>
+									<h2 class="tr" data-key="software"></h2>
 										<img src="./images/vscode.png" width="50px" height="50px">
 										<img src="./images/pyc.png" width="50px" height="50px">
 										<img src="./images/kali.jpg" width="50px" height="50px">
@@ -127,18 +116,18 @@
 
 						<!-- Education -->
 							<article id="edu">
-								<h2 class="major">Education</h2>
+								<h2 class="major" class="tr" data-key="edu"></h2>
 								<span class="image main"><img src="./images/iiitm.png" alt="IIITM Pic"/></span>
-								<h3> Indian Institute of Information Technology Gwalior </h3>
-								<h4 id="CS">Master of Technology (integrated)</h3>
-								<h5 id="CS"> Information Technology</h4>
-								<h6 id="CS_Date"> July 2018 - May 2023</h5>
+								<h3 class="tr" data-key="ins2name"></h3>
+								<h4 id="CS" class="tr" data-key="ins2degree"></h3>
+								<h5 id="CS" class="tr" data-key="ins2branch"></h4>
+								<h6 id="CS_Date" class="tr" data-key="ins2dates"></h5>
 								<br>
 								<span class="image main"><img src="./images/kkr.png" alt="KKR Pic"/></span>
-								<h3>Dr. KKR's Gowtham International School</h3>
-								<h4 id="CS">Class VII - XII</h4>								  
-								<h5 id="CS"> CBSE, APBIE</h4>
-								<h6 id="CS_Date"> Aug 2012 - May 2018</h5>
+								<h3 class="tr" data-key="ins1name"></h3>
+								<h4 id="CS" class="tr" data-key="ins1degree"></h4>								  
+								<h5 id="CS" class="tr" data-key="ins1branch"></h4>
+								<h6 id="CS_Date" class="tr" data-key="ins1dates"></h5>
 							</article>
 
 					</div>
@@ -159,6 +148,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/translate.js"></script>
 			<script data-goatcounter="https://gv1shnu.goatcounter.com/count"
         		async src="//gc.zgo.at/count.js"></script>
 	</body>
