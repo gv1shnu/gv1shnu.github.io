@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload img">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -40,8 +40,9 @@
 						<a href="https://github.com/gv1shnu"
 						target="_blank">
 							<img src="./images/github.png"
-							width="90"
-							height="90"
+							width="50"
+							height="50"
+							style="margin: 10px;"
 							>
 						</a>	
 						
@@ -49,20 +50,22 @@
 						target="_blank">
 						
 							<img src="./images/linkedin.png"
-							width="90"
-							height="90"
+							width="40"
+							height="40"
+							style="margin: 10px; position: relative; top: -5px;"
 							>
-						</a>	
+						</a>
 
 						<a href="https://www.instagram.com/gandarapuvishnu/"
 						target="_blank">
 						
 							<img src="./images/instagram.png"
-							width="90"
-							height="90"
+							width="50"
+							height="50"
+							style="margin: 10px;"
 							>
 						</a>
-						
+
 					</div>
 
 				<!-- Main -->
@@ -70,8 +73,10 @@
 
 						<!-- Work -->
 							<article id="work">
-								<h2 class="major" class="tr" data-key="workexp"></h2>
-								<span class="image main"><img src="./images/wcp.png" alt="Wattlecorp Logo"/></span>
+								<h2 class="major" class="tr" data-key="exp"></h2>
+								<span class="image main">
+									<img src="./images/wcp.png" alt="Wattlecorp Logo"/>
+								</span>
 								<p>
 									<h1 class="tr" data-key="company1"></h1>
 									<h4 class="tr" data-key="role1"></h4>
@@ -82,7 +87,9 @@
 						<!-- Skills -->
 							<article id="skills">
 								<h2 class="major" class="tr" data-key="skills"></h2>
-								<span class="image main"><img src="./images/cs_skills.jpg" alt="Skills"/></span>
+								<span class="image main">
+									<img src="./images/cs_skills.jpg" alt="Skills"/>
+								</span>
 								<p>
 									<h2 class="tr" data-key="pl"></h2>
 										<img src="./images/html.png" width="50px" height="50px">										
@@ -117,39 +124,53 @@
 						<!-- Education -->
 							<article id="edu">
 								<h2 class="major" class="tr" data-key="edu"></h2>
-								<span class="image main"><img src="./images/iiitm.png" alt="IIITM Pic"/></span>
+								<span class="image main">
+									<img src="./images/iiitm.png" alt="IIITM Pic" style="filter: brightness(120%);"/>
+								</span>
 								<h3 class="tr" data-key="ins2name"></h3>
 								<h4 id="CS" class="tr" data-key="ins2degree"></h3>
 								<h5 id="CS" class="tr" data-key="ins2branch"></h4>
 								<h6 id="CS_Date" class="tr" data-key="ins2dates"></h5>
 								<br>
-								<span class="image main"><img src="./images/kkr.png" alt="KKR Pic"/></span>
+								<span class="image main">
+									<img src="./images/kkr.png" alt="KKR Pic" style="filter: brightness(120%);"/>
+								</span>
 								<h3 class="tr" data-key="ins1name"></h3>
 								<h4 id="CS" class="tr" data-key="ins1degree"></h4>								  
 								<h5 id="CS" class="tr" data-key="ins1branch"></h4>
 								<h6 id="CS_Date" class="tr" data-key="ins1dates"></h5>
 							</article>
 
-					</div>
+					</div>				
+
+				<div id="language-toggle">
+					<button class="language-button" onclick="setLanguage('eng')">ENG</button>
+					<button class="language-button" onclick="setLanguage('hin')">HIN</button>
+					<button class="language-button" onclick="setLanguage('tel')">TEL</button>
+				</div>				  
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright"> Email: <a href="mailto:hire.gvishnu@gmail.com">hire.gvishnu@gmail.com</a></p>
+						<p id="mail"> Email: <a href="mailto:hire.gvishnu@gmail.com" id="email-entry">hire.gvishnu@gmail.com</a></p>
+							<br><br>
+						<p class="copyright">© 2023 Copyright | Gandarapu Vishnu </p>
 					</footer>
 
 			</div>
 		
 		<!-- BG -->
 			<div id="bg"></div>
-	
+		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/translate.js"></script>
+			<script src="assets/js/backg.js"></script>
+			<script src="assets/js/translate.js"></script>			
 			<script data-goatcounter="https://gv1shnu.goatcounter.com/count"
         		async src="//gc.zgo.at/count.js"></script>
+
 	</body>
 </html>

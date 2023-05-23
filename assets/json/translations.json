@@ -7,7 +7,7 @@
       "skills": "Skills",
       "edu": "Education",
 
-      "workexp": "Experience",
+      "exp": "Experience",
       "company1": "Wattlecorp Cybersecurity Labs",
       "role1": "Pentester Intern",
       "dates1":"June 2022 - July 2022",
@@ -35,7 +35,7 @@
         "skills": "कौशल",
         "edu": "शिक्षा",
 
-        "workexp": "अनुभव",
+        "exp": "अनुभव",
         "company1": "वैटलकॉर्प साइबर सुरक्षा प्रयोगशाला",
         "role1": "पेंटेस्टर इंटर्न",
         "dates1":"जून 2022 - जुलाई 2022",
@@ -64,7 +64,7 @@
         "skills": "నైపుణ్యాలు",
         "edu": "విద్య",
   
-        "workexp": "అనుభవం",
+        "exp": "అనుభవం",
         "company1": "వట్టలెక్స్ సైబర్ సెక్యూరిటీ లాబ్స్",
         "role1": "పెంటెస్టర్ ఇంటర్న్",
         "dates1":"జూన్ 2022 - జూలై 2022",
