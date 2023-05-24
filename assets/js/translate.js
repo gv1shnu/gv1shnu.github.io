@@ -29,12 +29,6 @@ function setLanguage(language) {
 var languages = ['eng', 'hin', 'tel'];
 var currentLanguageIndex = 0;
 
-function rotateLanguages() {
-  var language = languages[currentLanguageIndex];
-  setLanguage(language);
-  currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
-}
-
 function toggleLanguage() {
   currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
   var language = languages[currentLanguageIndex];
@@ -44,5 +38,15 @@ function toggleLanguage() {
 // Initial language setup
 setLanguage(languages[currentLanguageIndex]);
 
-// Rotate languages every 2 seconds
-// setInterval(rotateLanguages, 2000);
+var anchorTags = document.querySelectorAll("a.tr.p");
+var buttons = document.getElementsByClassName("language-button");
+
+for (var i = 0; i < anchorTags.length; i++) {
+  anchorTags[i].addEventListener("click", hideButtons);
+}
+
+function hideButtons() {
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].style.display = "none"; // or buttons[i].style.visibility = "hidden";
+  }
+}
