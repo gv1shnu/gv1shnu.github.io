@@ -1685,8 +1685,9 @@ input, select, textarea {
   .language-button {
 	padding: 2px;
 	margin-bottom: 3px;
+	height: 30px;
 	color: #333;
-	font-size: 8px;
+	font-size: 10px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
   }
