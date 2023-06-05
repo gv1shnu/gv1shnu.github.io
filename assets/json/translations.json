@@ -3,6 +3,7 @@
       "title": "G. Vishnu",
       "designation": "Tech Enthusiast",
       
+      "proj": "Projects",
       "work": "Work",
       "skills": "Skills",
       "edu": "Education",
@@ -12,6 +13,13 @@
       "role1": "Pentester Intern",
       "dates1":"June 2022 - July 2022",
 
+      "desc": "Description",
+      "gitrepo": "Github Repo",
+
+      "sn-title": "Search Nexus",
+      "sn-desc": "A flask-based search engine aggregator for efficient information retrieval.",
+      "sn-dates": "May 2023",
+      
       "pl": "Programming Languages",
       "fr": "Frameworks",
       "software": "Software",
@@ -31,6 +39,7 @@
         "title": "जी. विष्णु",
         "designation": "टेक उत्साही",
         
+        "proj": "परियोजनाएं",
         "work": "काम",
         "skills": "कौशल",
         "edu": "शिक्षा",
@@ -40,6 +49,13 @@
         "role1": "पेंटेस्टर इंटर्न",
         "dates1":"जून 2022 - जुलाई 2022",
       
+        "desc": "विवरण",
+        "gitrepo": "गिटहब रेपो",
+
+        "sn-title": "सर्च नेक्सस",
+        "sn-desc": "एक फ्लास्क-आधारित सर्च इंजन एग्रीगेटर जो कुशल जानकारी पुनर्प्राप्ति के लिए है।",
+        "sn-dates": "मई 2023",
+
         "pl": "प्रोग्रामिंग भाषाएँ",
         "fr": "फ़्रेमवर्क",
         "software": "सॉफ़्टवेयर",
@@ -60,6 +76,7 @@
         "title": "జి. విష్ణు",
         "designation": "టెక్ ఆసక్తివంతుడు",
         
+        "proj": "ప్రాజెక్టులు",
         "work": "పని",
         "skills": "నైపుణ్యాలు",
         "edu": "విద్య",
@@ -68,7 +85,14 @@
         "company1": "వట్టలెక్స్ సైబర్ సెక్యూరిటీ లాబ్స్",
         "role1": "పెంటెస్టర్ ఇంటర్న్",
         "dates1":"జూన్ 2022 - జూలై 2022",
-      
+
+        "desc": "వివరణ",
+        "gitrepo": "గిట్హబ్ రెపో",
+
+        "sn-title": "సెర్చ్ నెక్సస్",
+        "sn-desc": "కౌశల్య సమాచార పునర్ప్రాప్తికి ఫ్లాస్క్ ఆధారిత శోధన యంత్రం ఒక ఆగ్రగణించేది.",
+        "sn-dates": "మే 2023",
+
         "pl": "ప్రోగ్రామింగ్ భాషలు",
         "fr": "ఫ్రేమ్వర్క్లు",
         "software": "సాఫ్ట్‌వేర్",
