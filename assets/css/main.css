@@ -1633,9 +1633,13 @@ input, select, textarea {
 		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
 		max-width: 100%;
 		margin-top: 2rem;
+		padding: 10px 0;
 		text-align: center;
 	}
 
@@ -1662,7 +1666,14 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
-
+	  
+#mail {
+	letter-spacing: 0.2rem;
+	font-size: 0.8rem;
+	opacity: 0.75;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
 
 /* Language Toggle Buttons */
 #language-toggle {
@@ -1690,12 +1701,3 @@ input, select, textarea {
   .language-button:focus {
 	outline: none;
   }
-
-  
-#mail {
-	letter-spacing: 0.2rem;
-	font-size: 0.8rem;
-	opacity: 0.75;
-	margin-bottom: 0;
-	text-transform: uppercase;
-}
