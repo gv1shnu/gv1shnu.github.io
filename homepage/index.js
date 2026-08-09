@@ -69,16 +69,28 @@ function spawnLog() {
     el.classList.add('log-entry');
 
     const colors = ['#88ff88', '#88ffff', '#ffcc66', '#ff3333', '#888']; // green, cyan, amber, red, grey
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // Make room BEFORE choosing a color: once the batch is full, drop the oldest
+    // entry first so the "used colors" check reflects only what will remain on
+    // screen. This guarantees at least one free color and no repeats in a batch.
+    if (logContainer.children.length >= colors.length) {
+        logContainer.lastElementChild.remove();
+    }
+
+    // Pick a color not already used by a visible entry. Tracked via data-color
+    // since style.color reads back as rgb(), not the hex we set.
+    const usedColors = new Set(
+        Array.from(logContainer.children).map(c => c.dataset.color)
+    );
+    const freeColors = colors.filter(c => !usedColors.has(c));
+    const palette = freeColors.length ? freeColors : colors;
+    const randomColor = palette[Math.floor(Math.random() * palette.length)];
     el.style.color = randomColor;
+    el.dataset.color = randomColor;
     el.innerHTML = `> ${data.text}`;
 
     // Add to top of log stream (prepend)
     logContainer.prepend(el);
-
-    if (logContainer.children.length > 6) {
-        logContainer.lastElementChild.remove();
-    }
 
     // EASTER EGG: If "git push" appears in log, trigger avatar dabbing animation
     if (data.text.toLowerCase().includes("git push")) {
@@ -416,3 +428,17 @@ function animate() {
 
 // START ANIMATION LOOP
 animate();
+
+/* =========================================
+   DISCO SPECTRUM TOGGLE
+   =========================================
+   Toggles body.disco-on, which reveals the animated spectrum background
+   (see #spectrum-bg in index.css). Purely a visual on/off switch.
+*/
+const discoBtn = document.getElementById('disco-toggle');
+if (discoBtn) {
+    discoBtn.addEventListener('click', () => {
+        const on = document.body.classList.toggle('disco-on');
+        discoBtn.setAttribute('aria-pressed', String(on));
+    });
+}

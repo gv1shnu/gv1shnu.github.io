@@ -62,6 +62,112 @@ body {
     /* Position context for children */
 }
 
+/* === DISCO SPECTRUM BACKGROUND ===
+   A full-screen layer behind the canvas. When body.disco-on is set, it
+   irradiates the near-black background with the same palette used for the
+   log text (green, cyan, amber, red, grey), sweeping horizontally like the
+   illuminated tuning band of an old radio, with a gentle brightness pulse.
+*/
+#spectrum-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /* Behind canvas (z-index 1), above body background */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease;
+    background: linear-gradient(90deg,
+            #88ff88, #88ffff, #ffcc66, #ff3333, #888,
+            #ff3333, #ffcc66, #88ffff, #88ff88);
+    background-size: 300% 100%;
+    /* Soft glow so colors bleed into one another like backlit glass */
+    filter: blur(48px) saturate(1.3);
+}
+
+body.disco-on #spectrum-bg {
+    opacity: 0.45;
+    animation: spectrum-sweep 9s linear infinite,
+        spectrum-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes spectrum-sweep {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 300% 50%;
+    }
+}
+
+@keyframes spectrum-pulse {
+
+    0%,
+    100% {
+        opacity: 0.34;
+    }
+
+    50% {
+        opacity: 0.52;
+    }
+}
+
+/* --- Disco globe toggle button (top-left) --- */
+#disco-toggle {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 200;
+    /* Above scanlines (100) so it stays clickable and crisp */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--term-green);
+    background: rgba(5, 5, 5, 0.55);
+    border: 1px solid rgba(0, 255, 0, 0.4);
+    backdrop-filter: blur(2px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#disco-toggle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+}
+
+body.disco-on #disco-toggle {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 18px rgba(136, 255, 255, 0.7), 0 0 30px rgba(255, 51, 51, 0.4);
+}
+
+body.disco-on #disco-toggle i {
+    animation: disco-spin 3s linear infinite;
+}
+
+@keyframes disco-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility: honor reduced-motion — keep the glow, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+
+    body.disco-on #spectrum-bg {
+        animation: none;
+        opacity: 0.4;
+    }
+
+    body.disco-on #disco-toggle i {
+        animation: none;
+    }
+}
+
 /* --- CRT SCANLINE EFFECT (Retro monitor aesthetic) ---
    
    FUNCTIONALITY: Creates horizontal and vertical lines overlaying page
@@ -224,6 +330,54 @@ h1.hero-name {
     outline: 2px solid var(--term-green);
     outline-offset: 4px;
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+}
+
+/* === ROLE TITLE: tagline under the nav links ===
+   Two stacked lines: the day-job (grey, terminal caret) and the "duel"
+   (Databases vs Pentesting) color-coded to the log palette — cyan vs red.
+*/
+.role-title {
+    margin-top: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.role-title .role-role {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    /* Matches the "Visit Timeline" nav link size */
+    color: rgba(224, 224, 224, 0.85);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.25);
+}
+
+.role-title .role-tag {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    letter-spacing: 3px;
+}
+
+/* Databases / Pentesting use colors OUTSIDE the log palette
+   (log palette = green, cyan, amber, red, grey) so the tagline reads
+   as its own accent: violet-blue vs magenta-pink. */
+.role-title .role-db {
+    color: #7c9dff;
+    text-shadow: 0 0 6px rgba(124, 157, 255, 0.5);
+}
+
+.role-title .role-pen {
+    color: #ff5fb0;
+    text-shadow: 0 0 6px rgba(255, 95, 176, 0.5);
+}
+
+.role-title .role-v {
+    color: #888;
+    font-style: italic;
+    margin: 0 0.15rem;
 }
 
 /* === LOG STREAM: Terminal display area ===

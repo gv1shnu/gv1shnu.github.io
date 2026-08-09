@@ -31,6 +31,17 @@
 
 <body>
 
+    <!-- ========== DISCO SPECTRUM TOGGLE ========== -->
+    <!-- Top-left globe button. Click "irradiates" the background with an -->
+    <!-- animated spectrum of the log-text palette, like an old radio dial. -->
+    <button id="disco-toggle" type="button" aria-pressed="false" title="Disco mode"
+        aria-label="Toggle disco spectrum background">
+        <i class="fa-solid fa-globe"></i>
+    </button>
+
+    <!-- Full-screen spectrum layer (behind everything). Hidden until toggled. -->
+    <div id="spectrum-bg" aria-hidden="true"></div>
+
     <!-- ========== UI LAYER: Hero and Navigation ========== -->
     <!-- Contains: Hero name title and navigation links to other pages -->
     <!-- z-index: 50 - appears above canvas animation, below scanlines -->
@@ -41,6 +52,16 @@
         <div class="nav-links">
             <a class="cyber-link" href="timeline/">Visit Timeline</a>
             <a class="cyber-link" href="contact/">Contact Me</a>
+        </div>
+
+        <!-- Role tagline: the day-job vs the craft -->
+        <div class="role-title">
+            <span class="role-role">&gt; Assistant Professor</span>
+            <span class="role-tag">
+                <span class="role-db">Databases</span>
+                <span class="role-v">vs</span>
+                <span class="role-pen">Pentesting</span>
+            </span>
         </div>
     </div>
 
