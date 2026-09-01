@@ -5,9 +5,27 @@
     <!-- ========== META INFORMATION ========== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional timeline of Vishnu Gandarapu">
+    <meta name="description"
+        content="A chronological timeline of Vishnu Gandarapu — education, work, and projects across computer science, security, and data.">
+    <meta name="author" content="Vishnu Gandarapu" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <link rel="canonical" href="https://www.vishnugandarapu.in/timeline/" />
 
     <title>Timeline - Vishnu Gandarapu</title>
+
+    <!-- ========== SOCIAL SHARING (Open Graph / Twitter) ========== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vishnu Gandarapu" />
+    <meta property="og:title" content="Timeline — Vishnu Gandarapu" />
+    <meta property="og:description"
+        content="Education, work, and projects across computer science, security, and data." />
+    <meta property="og:url" content="https://www.vishnugandarapu.in/timeline/" />
+    <meta property="og:image" content="https://www.vishnugandarapu.in/favicon/android-chrome-512x512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Timeline — Vishnu Gandarapu" />
+    <meta name="twitter:description"
+        content="Education, work, and projects across computer science, security, and data." />
+    <meta name="twitter:image" content="https://www.vishnugandarapu.in/favicon/android-chrome-512x512.png" />
 
     <!-- ========== GOOGLE FONTS ========== -->
     <!-- Import Inter font with weights 400, 600, 800 for typography hierarchy -->
@@ -69,9 +87,18 @@
             <!-- data-filter attribute controls which items to show -->
             <nav class="timeline-nav">
                 <button class="active" data-filter="all">All</button>
-                <button data-filter="edu">Education</button>
-                <button data-filter="work">Work</button>
-                <button data-filter="project">Projects</button>
+                <button data-filter="edu">
+                    <span class="filter-dot filter-edu" aria-hidden="true"></span>
+                    Education
+                </button>
+                <button data-filter="work">
+                    <span class="filter-dot filter-work" aria-hidden="true"></span>
+                    Work
+                </button>
+                <button data-filter="project">
+                    <span class="filter-dot filter-project" aria-hidden="true"></span>
+                    Projects
+                </button>
             </nav>
 
             <!-- ========== TIMELINE ITEMS ========== -->
@@ -106,9 +133,80 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </h3>
-                    <p><em>Personal Project</em></p>
+                    <p><em>Security Automation Tool</em></p>
                     <p>Automation tool that chains web-pentesting reconnaissance and vulnerability scanning into a
                         single repeatable pipeline.</p>
+                </div>
+
+                <!-- PROJECT: Nexus -->
+                <div class="timeline-item project">
+                    <h3>
+                        Nexus
+                        <a href="https://github.com/gv1shnu/nexus" target="_blank" rel="noopener noreferrer"
+                            aria-label="Nexus on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://nexus-lixx.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Visit Nexus">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </h3>
+                    <p><em>Metasearch Engine</em></p>
+                    <p>A privacy-focused metasearch engine that queries multiple sources, then merges and ranks the
+                        results into one feed.</p>
+                </div>
+
+                <!-- PROJECT: Dino Hunt -->
+                <div class="timeline-item project">
+                    <h3>
+                        Dino Hunt
+                        <a href="https://github.com/gv1shnu/dino-hunt" target="_blank" rel="noopener noreferrer"
+                            aria-label="Dino Hunt on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://dancingwithdeath.itch.io/dino-hunt" target="_blank" rel="noopener noreferrer"
+                            aria-label="Play Dino Hunt">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </h3>
+                    <p><em>AI Ecosystem Sandbox</em></p>
+                    <p>Autonomous agent teams raid a raptor nest while hostile raptors hunt the most isolated agents.
+                    </p>
+                </div>
+
+                <!-- PROJECT: Privacy Lens -->
+                <div class="timeline-item project">
+                    <h3>
+                        Privacy Lens
+                        <a href="https://github.com/gv1shnu/privacy-lens" target="_blank" rel="noopener noreferrer"
+                            aria-label="Privacy Lens on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://privacy-lens-ggop.onrender.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Visit Privacy Lens">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </h3>
+                    <p><em>Privacy Analysis Tool</em></p>
+                    <p>A real-time report of a website's trackers, cookies, pixels, fingerprinting, and form data
+                        collection.</p>
+                </div>
+
+                <!-- PROJECT: Encrypted Notes -->
+                <div class="timeline-item project">
+                    <h3>
+                        Encrypted Notes
+                        <a href="https://github.com/gv1shnu/cs" target="_blank" rel="noopener noreferrer"
+                            aria-label="Encrypted Notes on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://vishnugandarapu.in/cs" target="_blank" rel="noopener noreferrer"
+                            aria-label="Visit Encrypted Notes">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </h3>
+                    <p><em>Private Knowledge Base</em></p>
+                    <p>A password-protected collection of personal notes kept behind an encrypted static interface.</p>
                 </div>
 
                 <!-- PROJECT: Project BAY -->
@@ -119,10 +217,33 @@
                         <a href="https://github.com/gv1shnu/project-bay" target="_blank" rel="noopener">
                             <i class="fab fa-github"></i>
                         </a>
+                        <a href="https://project-bay-amber.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Visit Project BAY">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
                     </h3>
-                    <p><em>Personal Project</em></p>
+                    <p><em>Social Challenge Platform</em></p>
                     <p>Ethical betting web application focused on self-imposed growth with constraints and
                         accountability.</p>
+                </div>
+
+                <!-- PROJECT: Fiction -->
+                <div class="timeline-item project">
+                    <h3>
+                        Fiction
+                        <!-- Fiction is not public right now — links hidden until it's live again.
+                        <a href="https://github.com/gv1shnu/fiction" target="_blank" rel="noopener noreferrer"
+                            aria-label="Fiction on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="http://www.vishnugandarapu.in/fiction/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Read Fiction">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        -->
+                    </h3>
+                    <p><em>Feature Screenplay</em></p>
+                    <p>A screenplay about college students surviving a journey across a post-apocalyptic India.</p>
                 </div>
 
                 <!-- YEAR HEADER: 2025 -->
@@ -237,21 +358,6 @@
 
                 <!-- YEAR HEADER: 2019 -->
                 <div class="timeline-year">2019</div>
-
-                <!-- PROJECT: Film -->
-                <div class="timeline-item project">
-                    <h3>Student Short Film Project</h3>
-                    <p><em>Supporting Actor</em></p>
-                    <p>Volunteered in a student-led short film production.</p>
-                </div>
-
-                <!-- PROJECT: Photography -->
-                <div class="timeline-item project">
-                    <h3>Wildlife Photography</h3>
-                    <p><em>Campus Birdlife — New Year Calendar</em></p>
-                    <p>Contributed bird and wildlife photographs taken on campus for a student-led New Year calendar
-                        project.</p>
-                </div>
 
                 <!-- YEAR HEADER: 2018 -->
                 <div class="timeline-year">2018</div>

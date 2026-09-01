@@ -14,6 +14,7 @@
 
 let logs = [];                                  // Array to store parsed log objects
 const logContainer = document.getElementById('log-stream'); // Reference to log display area
+let logIndex = 0;
 
 /**
  * PHASE 1: FETCH & PARSE LOG FILE
@@ -62,8 +63,9 @@ fetch('./homepage/logz.txt')
 function spawnLog() {
     if (logs.length === 0) return;
 
-    // Pick a random log from the array
-    const data = logs[Math.floor(Math.random() * logs.length)];
+    const data = logs[logIndex];
+    logIndex = (logIndex + 1) % logs.length;
+
     const el = document.createElement('div');
 
     el.classList.add('log-entry');

@@ -6,10 +6,31 @@
     <!-- Character encoding and viewport settings for mobile responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vishnu Gandarapu - developer portfolio.">
+    <meta name="description"
+        content="Vishnu Gandarapu — Assistant Professor of Computer Science and Certified Ethical Hacker. Databases, security, and applied engineering.">
+    <meta name="author" content="Vishnu Gandarapu">
+    <meta name="theme-color" content="#050505">
+    <link rel="canonical" href="https://www.vishnugandarapu.in/">
 
     <!-- Page title shown in browser tab -->
     <title>Vishnu Gandarapu</title>
+
+    <!-- ========== SOCIAL SHARING (Open Graph / Twitter) ========== -->
+    <!-- Controls the preview card shown when the link is shared on -->
+    <!-- LinkedIn, WhatsApp, X, Slack, etc. Replace og-image with a -->
+    <!-- dedicated 1200x630 image for the best-looking card. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vishnu Gandarapu">
+    <meta property="og:title" content="Vishnu Gandarapu">
+    <meta property="og:description"
+        content="Assistant Professor of Computer Science and Certified Ethical Hacker. Databases, security, and applied engineering.">
+    <meta property="og:url" content="https://www.vishnugandarapu.in/">
+    <meta property="og:image" content="https://www.vishnugandarapu.in/favicon/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vishnu Gandarapu">
+    <meta name="twitter:description"
+        content="Assistant Professor of Computer Science and Certified Ethical Hacker.">
+    <meta name="twitter:image" content="https://www.vishnugandarapu.in/favicon/android-chrome-512x512.png">
 
     <!-- ========== STYLESHEETS ========== -->
     <!-- Main stylesheet for hacker/terminal aesthetic -->
@@ -54,14 +75,18 @@
             <a class="cyber-link" href="contact/">Contact Me</a>
         </div>
 
-        <!-- Role tagline: the day-job vs the craft -->
-        <div class="role-title">
-            <span class="role-tag">
-                <span class="role-db">Databases</span>
-                <span class="role-v">v</span>
-                <span class="role-pen">Pentesting</span>
-            </span>
-        </div>
+        <!-- ========== ABOUT CARD: terminal `whoami` bio ========== -->
+        <!-- Fills the central space and gives a real, human introduction -->
+        <!-- for the visitors who want substance, not just the animation. -->
+        <section id="about-card" aria-label="About Vishnu Gandarapu">
+            <p class="about-prompt"><span class="about-user">vishnu@earth</span>:~$ whoami</p>
+            <p class="about-line">Vishnu Gandarapu — Assistant Professor of Computer Science.</p>
+            <p class="about-line">Certified Ethical Hacker; I stress-test systems the honest way.</p>
+            <p class="about-line">M.Tech @ IIIT Gwalior &middot; M.Sc Data Science &amp; AI @ BITS Pilani (in progress).</p>
+            <p class="about-line">Databases by day, pentesting by night, valo in the margins.</p>
+            <p class="about-prompt about-cursor"><span class="about-user">vishnu@earth</span>:~$ <span
+                    class="blink">&#9608;</span></p>
+        </section>
     </div>
 
     <!-- ========== LOG STREAM: Terminal Display ========== -->
@@ -75,7 +100,7 @@
     <div id="footer">
         &copy; 2026 Vishnu Gandarapu. Online.
         <span class="footer-profiles">
-            <a href="https://github.com/gv1shnu/portfolio" target="_blank" title="GitHub"><i
+            <a href="https://github.com/gv1shnu" target="_blank" rel="noopener" title="GitHub"><i
                     class="fa-brands fa-github"></i></a>
         </span>
     </div>

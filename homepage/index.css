@@ -52,12 +52,11 @@ body {
     background-color: var(--bg-color);
     color: var(--term-green);
     font-family: var(--font-main);
-    overflow: hidden;
-    /* Hide scrollbars - content won't scroll */
-    height: 100vh;
-    /* Full viewport height */
-    width: 100vw;
-    /* Full viewport width */
+    overflow-x: hidden;
+    /* Never scroll sideways; allow vertical scroll as a safety net */
+    min-height: 100vh;
+    /* At least a full screen; grows if content needs it (small screens) */
+    width: 100%;
     position: relative;
     /* Position context for children */
 }
@@ -211,15 +210,72 @@ body::after {
    - z-index: 50 (above canvas, below scanlines)
 */
 #ui-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    /* In normal flow so the about card and logs stack beneath it */
     width: 100%;
     padding-top: 6vh;
     /* Space from top */
     text-align: center;
     z-index: 50;
     /* Above canvas animation */
+}
+
+/* === ABOUT CARD: terminal `whoami` bio ===
+   A left-aligned terminal panel that fills the space under the tagline and
+   gives visitors a real, human introduction. Semi-transparent so the canvas
+   avatar behind it still bleeds through at the edges.
+*/
+#about-card {
+    margin: 2.2rem auto 0;
+    width: 90%;
+    max-width: 620px;
+    text-align: left;
+    padding: 1.1rem 1.3rem;
+    border: 1px solid rgba(0, 255, 0, 0.35);
+    border-radius: 6px;
+    background: rgba(3, 12, 3, 0.72);
+    box-shadow: 0 0 24px rgba(0, 255, 0, 0.12);
+    backdrop-filter: blur(2px);
+    line-height: 1.7;
+}
+
+#about-card .about-prompt {
+    font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+    color: rgba(224, 224, 224, 0.55);
+    letter-spacing: 0.5px;
+}
+
+#about-card .about-user {
+    color: var(--term-green);
+}
+
+#about-card .about-line {
+    font-size: clamp(0.82rem, 1.6vw, 0.98rem);
+    color: #d6e6d6;
+    margin: 0.35rem 0;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.12);
+}
+
+#about-card .about-cursor {
+    margin-top: 0.5rem;
+}
+
+/* Blinking block cursor on the closing prompt line */
+.blink {
+    color: var(--term-green);
+    animation: about-blink 1.05s step-end infinite;
+}
+
+@keyframes about-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 /* --- HERO NAME: Main title ---
@@ -332,54 +388,6 @@ h1.hero-name {
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
 }
 
-/* === ROLE TITLE: tagline under the nav links ===
-   Two stacked lines: the day-job (grey, terminal caret) and the "duel"
-   (Databases vs Pentesting) color-coded to the log palette — cyan vs red.
-*/
-.role-title {
-    margin-top: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
-    font-family: var(--font-main);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.4;
-    pointer-events: none;
-}
-
-.role-title .role-role {
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    /* Matches the "Visit Timeline" nav link size */
-    color: rgba(224, 224, 224, 0.85);
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.25);
-}
-
-.role-title .role-tag {
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    letter-spacing: 3px;
-}
-
-/* Databases / Pentesting use colors OUTSIDE the log palette
-   (log palette = green, cyan, amber, red, grey) so the tagline reads
-   as its own accent: violet-blue vs magenta-pink. */
-.role-title .role-db {
-    color: #7c9dff;
-    text-shadow: 0 0 6px rgba(124, 157, 255, 0.5);
-}
-
-.role-title .role-pen {
-    color: #ff5fb0;
-    text-shadow: 0 0 6px rgba(255, 95, 176, 0.5);
-}
-
-.role-title .role-v {
-    color: #888;
-    font-style: italic;
-    margin: 0 0.15rem;
-}
-
 /* === LOG STREAM: Terminal display area ===
    
    POSITIONING:
@@ -394,20 +402,15 @@ h1.hero-name {
    - overflow: hidden prevents scrollbars
 */
 #log-stream {
-    position: absolute;
-    top: 22%;
-    /* A bit higher so we can make the window taller */
-    left: 50%;
-    transform: translateX(-50%);
-    /* Center horizontally */
+    position: relative;
+    /* Flows directly beneath the about card, filling the mid-lower band */
+    margin: 2.2rem auto 0;
     width: 90%;
     max-width: 700px;
-    /* Wider (was 600px) to fit more logs */
-    bottom: 300px;
-    /* Use bottom instead of fixed height so window fills space down to above footer */
+    min-height: 150px;
+    /* Reserve space so the terminal band never collapses */
     overflow-x: hidden;
-    overflow-y: auto;
-    /* Allow scrolling so no log entry is hidden; still capped at 13 children in JS */
+    overflow-y: hidden;
     z-index: 10;
     display: flex;
     flex-direction: column-reverse;
@@ -488,7 +491,8 @@ h1.hero-name {
 */
 #hacker-den {
     display: block;
-    position: absolute;
+    position: fixed;
+    /* Pinned to the viewport as a background so page content flows over it */
     bottom: 0;
     left: 0;
     width: 100%;
@@ -557,6 +561,14 @@ h1.hero-name {
    Adjustments for small screen sizes
 */
 @media (max-width: 640px) {
+
+    /**
+     * MOBILE: Push the header down so the centered name clears the
+     * fixed disco globe in the top-left corner.
+     */
+    #ui-layer {
+        padding-top: 84px;
+    }
 
     /**
      * MOBILE: Navigation links stack vertically

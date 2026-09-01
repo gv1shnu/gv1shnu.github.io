@@ -28,8 +28,8 @@
         return;
     }
 
-    const CHAR_DELAY = 45;        // ms between characters
-    const LINE_PAUSE = 300;       // ms pause between lines
+    const CHAR_DELAY = 22;        // ms between characters (snappy, links reveal in ~2s)
+    const LINE_PAUSE = 160;       // ms pause between lines
     const CURSOR = '\u2588';      // █ block cursor
 
     let currentLine = 0;
@@ -88,7 +88,7 @@
     }
 
     // Start with a brief delay to let Matrix rain settle in
-    setTimeout(typeNextChar, 600);
+    setTimeout(typeNextChar, 250);
 
     // ─── GLITCH HOVER ───────────────────────────────────────
 

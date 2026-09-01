@@ -140,6 +140,7 @@ h1 {
  */
 .timeline-nav {
     display: flex;
+    flex-wrap: wrap;
     gap: 22px;
     /* Space between buttons */
     margin-bottom: 40px;
@@ -157,6 +158,9 @@ h1 {
  * - Relative positioning for ::after pseudo-element
  */
 .timeline-nav button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background: none;
     /* No button background */
     border: none;
@@ -217,6 +221,25 @@ h1 {
 .timeline-nav button:focus-visible {
     outline: 2px solid var(--text);
     outline-offset: 4px;
+}
+
+.filter-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    border-radius: 50%;
+}
+
+.filter-edu {
+    background: var(--edu);
+}
+
+.filter-work {
+    background: var(--work);
+}
+
+.filter-project {
+    background: var(--project);
 }
 
 /* ========== TIMELINE CORE ========== */
@@ -320,6 +343,10 @@ h1 {
     color: inherit;
     text-decoration: none;
     /* No underline */
+}
+
+.timeline-item h3 a + a {
+    margin-left: 0.5rem;
 }
 
 .timeline-item h3 a:hover {
