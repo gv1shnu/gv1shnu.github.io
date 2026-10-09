@@ -147,6 +147,8 @@ function resize() {
     ctx.scale(dpr, dpr);
     // Scale between 0.6x and 1.2x based on CSS viewport size
     scale = Math.max(0.6, Math.min(Math.min(cssWidth / 500, cssHeight / 500), 1.2));
+    // Reserve the avatar's footprint (monitor top sits ~100*scale above its base at 85% height)
+    document.body.style.setProperty('--avatar-space', Math.ceil(cssHeight * 0.15 + 110 * scale) + 'px');
 }
 let resizeTimeout;
 window.addEventListener('resize', () => {
